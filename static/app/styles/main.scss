@@ -1,0 +1,156 @@
+@import "sass-bootstrap/lib/bootstrap";
+
+$pro_bg: #D4FFD7;
+$con_bg: #FFDADA;
+$puzzle_bg: #FFFDD4;
+
+@mixin border-box() {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Put your CSS here */
+html, body, .container {
+    width: 100%;
+    height: 100%;
+    @include border-box();
+}
+
+body, .container {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    font-size: 18px;
+}
+
+.container {
+    padding: 10px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+#sprint-names,
+.nav-list {
+    list-style: none;
+    padding: 5px 0 0 0;
+    margin: 0;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+#tickets-publish {
+    float: right;
+}
+
+.role-switcher,
+.role-marker {
+    &.pro {
+        background-color: $btn-success-bg;
+    }
+
+    &.con {
+        background-color: $btn-danger-bg;
+    }
+
+    &.puzzle {
+        background-color: $btn-warning-bg;
+    }
+}
+
+.role-switcher {
+    font-size: 45px;
+    line-height: 25px;
+    color: white;
+}
+
+#cloud-container {
+    width: 100%;
+    height: 100%;
+}
+
+.tickets {
+    list-style: none;
+    padding: 0;
+}
+
+.ticket {
+    padding:5px;
+    margin-bottom: 5px;
+    outline: 1px solid #E2E2E2;
+
+    font-family: 'comic sans ms',fantasy;
+
+    &.pro {
+        background-color: $pro_bg;
+    }
+
+    &.con {
+        background-color: $con_bg;
+    }
+
+    &.puzzle {
+        background-color: $puzzle_bg;
+    }
+
+    .ticket-controls,
+    .ticket-meta {
+        text-align: right;
+    }
+
+    .ticket-meta {
+      bottom: 0;
+      right: 2px;
+      font-size: 80%;
+    }
+
+    .delete-ticket {
+        padding: 4px 5px;
+        height: 25px;
+    }
+
+    .ticket-message {
+        padding: 5px;
+    }
+}
+
+.retrospectives {
+    list-style: none;
+    padding: 0;
+}
+
+.retrospective {
+    padding:5px;
+    margin-bottom: 5px;
+    outline: 1px solid #E2E2E2;
+
+    font-family: 'comic sans ms',fantasy;
+
+    .retrospective-controls,
+    .retrospective-meta {
+        text-align: right;
+    }
+    .retrospective-meta {
+      bottom: 0;
+      right: 2px;
+      font-size: 80%;
+    }
+}
+
+.edit-active-ticket {
+    width: 100%;
+}
+

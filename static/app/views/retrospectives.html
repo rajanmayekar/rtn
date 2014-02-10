@@ -1,0 +1,29 @@
+<div class="hero-unit">
+    <h1>Retrospectacular</h1>
+    <a href="#/wordcloud">See the cloud</a>
+
+    <form name="retroAddForm" ng-submit="saveRetrospective()" novalidate>
+        <div class="input-group">
+            <input type="text" class="form-control" id="new-retrospective" ng-model="newRetrospective.name" placeholder="Retrospective name">
+            <span class="input-group-btn">
+                <button class="btn btn-success" ng-disabled="!newRetrospective.name" type="submit">Start</button>
+            </span>
+        </div>
+    </form>
+
+    <ul id="sprint-names">
+        <li class="retrospective" ng-repeat="retrospective in retrospectives">
+            <div class="retrospective-controls">
+                <button class="delete-retrospective btn btn-danger" ng-click="deleteRetrospective(retrospective)">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    <span class="sr-only">Delete</span>
+                </button>
+            </div>
+            <a href="#/retrospectives/{{retrospective.id}}">{{retrospective.name}}</a>
+            <div class="retrospective-meta">
+                <time class="created-date" itemProp="dateCreated" datetime="{{retrospective.createdAt | someTimeAgo}}">{{retrospective.createdAt | someTimeAgo}}</time>
+            </div>
+        </li>
+    </ul>
+    <h3>Enjoy retrospecting!</h3>
+</div>

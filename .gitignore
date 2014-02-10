@@ -1,0 +1,31 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+
+# service
+service/config.js
+service/test/config-debug.js
+
+# static
+static/.sass-cache
+static/.tmp
+static/app/bower_components
+static/dist
+static/coverage
+static/app/styles/*.css
+static/Firefox*
+static/PhantomJS*
+
+static/app/scripts/config.js

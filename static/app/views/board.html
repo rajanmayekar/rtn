@@ -1,0 +1,75 @@
+<div>
+    <nav class="navigation-container btn-group">
+        <a class="btn btn-info" href="#/retrospectives">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span> Back to retrospectives
+        </a>
+        <a class="btn btn-info" target="_blank" href="#/retrospectives/{{retroId}}/markup">
+            <span class="glyphicon glyphicon-list-alt"></span> Wiki markup
+        </a>
+        <a class="btn btn-success" href="#/tickets/{{retroId}}">
+            <span class="glyphicon glyphicon-plus-sign"></span> Add tickets
+        </a>
+    </nav>
+
+    <header>
+        <h1>Board: {{retroName}}</h1>
+        <button class="btn btn-default" ng-click="updateTickets()">
+            <span class="glyphicon glyphicon-refresh"></span> Refresh
+        </button>
+    </header>
+
+    <div>
+        <div class="col-xs-12 col-md-4">
+            <h2>Positive</h2>
+            <ul id="positive-tickets" class="tickets">
+                <li class="ticket pro" ng-repeat="ticket in tickets | filter: {role:'pro'}">
+                    <div class="ticket-controls">
+                        <button class="delete-ticket btn btn-danger" ng-click="deleteTicket(ticket)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="sr-only">Delete</span>
+                        </button>
+                    </div>
+                    <div class="ticket-message">{{ticket.message}}</div>
+                    <div class="ticket-meta">
+                        <time class="created-date" itemProp="dateCreated" datetime="{{ticket.createdAt | someTimeAgo}}">{{ticket.createdAt | someTimeAgo}}</time>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+            <h2>Negative</h2>
+            <ul id="negative-tickets" class="tickets">
+                <li class="ticket con" ng-repeat="ticket in tickets | filter: {role:'con'}">
+                    <div class="ticket-controls">
+                        <button class="delete-ticket btn btn-danger" ng-click="deleteTicket(ticket)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="sr-only">Delete</span>
+                        </button>
+                    </div>
+                    <div class="ticket-message">{{ticket.message}}</div>
+                    <div class="ticket-meta">
+                        <time class="created-date" itemProp="dateCreated" datetime="{{ticket.createdAt | someTimeAgo}}">{{ticket.createdAt | someTimeAgo}}</time>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <h2>Puzzle</h2>
+            <ul id="puzzle-tickets" class="tickets">
+                <li class="ticket puzzle" ng-repeat="ticket in tickets | filter: {role:'puzzle'}">
+                    <div class="ticket-controls">
+                        <button class="delete-ticket btn btn-danger" ng-click="deleteTicket(ticket)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="sr-only">Delete</span>
+                        </button>
+                    </div>
+                    <div class="ticket-message">{{ticket.message}}</div>
+                    <div class="ticket-meta">
+                        <time class="created-date" itemProp="dateCreated" datetime="{{ticket.createdAt | someTimeAgo}}">{{ticket.createdAt | someTimeAgo}}</time>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
