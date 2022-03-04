@@ -1,2 +1,2 @@
-# RateThisNews
-Application to allow news rating
+# Retrospectives
+Application to manage sprint retro
